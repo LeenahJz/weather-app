@@ -1,0 +1,299 @@
+/* Pixel Art Weather App with Consistent Pixelify Sans Font */
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
+
+:root {
+  --pixel-purple-dark: #5A2D8A;
+  --pixel-purple-medium: #9C6FEE;
+  --pixel-purple-light: #E2D1F9;
+  --pixel-blue: #A7C7E7;
+  --pixel-green: #C1E1C1;
+  --pixel-yellow: #FDFD96;
+  --pixel-pink: #FFB6C1;
+  --pixel-border: 2px solid var(--pixel-purple-dark);
+  --pixel-shadow: 4px 4px 0 var(--pixel-purple-dark);
+}
+
+/* Apply Pixelify Sans to all text elements */
+body, h1, h2, h3, h4, h5, h6,
+button, input, textarea, select,
+.pixel-title, .pixel-subtitle,
+.pixel-weather-desc, .pixel-weather-detail-label,
+.pixel-weather-detail-value, .pixel-error {
+  font-family: 'Pixelify Sans', cursive !important;
+}
+
+body {
+  color: #3A1B5A;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--pixel-blue), var(--pixel-green));
+  background-attachment: fixed;
+}
+
+.pixel-app {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.pixel-title {
+  text-align: center;
+  color: var(--pixel-purple-dark);
+  font-size: 3.5rem;
+  margin: 20px 0 10px;
+  text-shadow: 2px 2px 0 rgba(255,255,255,0.3);
+  background: linear-gradient(to right, var(--pixel-pink), var(--pixel-purple-light));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  padding: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.pixel-subtitle {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+  color: var(--pixel-purple-dark);
+  font-weight: 600;
+}
+
+/* Weather Form */
+.pixel-weather-form {
+  background: linear-gradient(to bottom right, var(--pixel-purple-light), white);
+  padding: 20px;
+  border: var(--pixel-border);
+  box-shadow: var(--pixel-shadow);
+  margin-bottom: 30px;
+  border-radius: 8px;
+}
+
+.pixel-input-group {
+  display: flex;
+  gap: 10px;
+}
+
+.pixel-input {
+  flex: 1;
+  padding: 12px;
+  border: var(--pixel-border);
+  font-size: 1.2rem;
+  box-shadow: inset 2px 2px 0 var(--pixel-purple-dark);
+  background-color: rgba(255,255,255,0.8);
+  border-radius: 4px;
+}
+
+.pixel-button {
+  padding: 12px 24px;
+  border: var(--pixel-border);
+  background: linear-gradient(to bottom, var(--pixel-purple-medium), var(--pixel-purple-dark));
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: var(--pixel-shadow);
+  transition: all 0.1s;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.pixel-button:hover {
+  background: linear-gradient(to bottom, var(--pixel-purple-dark), var(--pixel-purple-medium));
+}
+
+.pixel-button:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 var(--pixel-purple-dark);
+}
+
+/* Weather Display */
+.pixel-weather-card {
+  background: linear-gradient(to bottom right, white, var(--pixel-blue));
+  border: var(--pixel-border);
+  box-shadow: var(--pixel-shadow);
+  padding: 25px;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.pixel-weather-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.pixel-weather-icon {
+  width: 100px;
+  height: 100px;
+  image-rendering: pixelated;
+  background: linear-gradient(to bottom right, var(--pixel-yellow), var(--pixel-pink));
+  border-radius: 50%;
+  padding: 10px;
+  border: var(--pixel-border);
+}
+
+.pixel-weather-temp {
+  font-size: 3.5rem;
+  font-weight: 700;
+  background: linear-gradient(to right, var(--pixel-purple-dark), var(--pixel-purple-medium));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin: 10px 0;
+  letter-spacing: 1px;
+}
+
+.pixel-weather-desc {
+  font-size: 2rem;
+  margin-bottom: 25px;
+  color: var(--pixel-purple-dark);
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.pixel-weather-details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.pixel-weather-detail {
+  background: rgba(255,255,255,0.7);
+  padding: 15px;
+  border: var(--pixel-border);
+  border-radius: 6px;
+  backdrop-filter: blur(5px);
+}
+
+.pixel-weather-detail-label {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  color: var(--pixel-purple-dark);
+  font-weight: 600;
+}
+
+.pixel-weather-detail-value {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--pixel-purple-dark);
+}
+
+/* Loading State */
+.pixel-loading {
+  text-align: center;
+  padding: 40px;
+  background: rgba(255,255,255,0.7);
+  border: var(--pixel-border);
+  border-radius: 8px;
+  box-shadow: var(--pixel-shadow);
+}
+
+.pixel-loading-text {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 20px;
+  color: var(--pixel-purple-dark);
+}
+
+.pixel-spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid var(--pixel-purple-medium);
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: pixelSpin 1s linear infinite;
+  margin: 0 auto;
+}
+
+@keyframes pixelSpin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Error State */
+.pixel-error {
+  background: linear-gradient(to right, var(--pixel-pink), #FF8A8A);
+  color: white;
+  padding: 15px 20px;
+  border: var(--pixel-border);
+  box-shadow: var(--pixel-shadow);
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 6px;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.pixel-close-button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: transform 0.2s;
+  font-weight: 700;
+}
+
+.pixel-close-button:hover {
+  transform: scale(1.2);
+}
+
+/* Pixel Art Decorations */
+.pixel-decoration {
+  position: fixed;
+  z-index: -1;
+  image-rendering: pixelated;
+  opacity: 0.8;
+}
+
+.pixel-sun {
+  top: 5%;
+  right: 10%;
+  width: 80px;
+  height: 80px;
+  background: radial-gradient(circle, var(--pixel-yellow), #FFD700);
+  border-radius: 50%;
+  box-shadow: 0 0 20px var(--pixel-yellow);
+}
+
+.pixel-cloud {
+  bottom: 10%;
+  left: 10%;
+  width: 120px;
+  height: 70px;
+  background: radial-gradient(circle at 30% 40%, white, #E0F7FA);
+  border-radius: 50px;
+  box-shadow: 
+    20px 20px 0 0 white,
+    -20px 10px 0 0 white;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .pixel-title {
+    font-size: 2.2rem;
+  }
+  
+  .pixel-subtitle {
+    font-size: 1.4rem;
+  }
+  
+  .pixel-weather-header {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .pixel-weather-details {
+    grid-template-columns: 1fr;
+  }
+  
+  .pixel-input, .pixel-button {
+    font-size: 1rem;
+  }
+}
