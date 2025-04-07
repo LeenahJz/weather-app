@@ -154,5 +154,6 @@ Si tienes preguntas o encuentras algún problema, por favor abre un issue en est
 ## Autor
 
 - [Brayan Diaz C](https://github.com/brayandiazc)
+- [Alejandra Beltran]
 
 Con ❤️ por [Adalid CL](https://github.com/adalid-cl) 😊
