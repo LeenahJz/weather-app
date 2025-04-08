@@ -2,7 +2,7 @@
 
 ![Adalid Logo](src/assets/weather.jpeg)
 
-**WeatherApp** es una aplicación React diseñada con inspiración en pixel art para consumir datos de una API de clima en tiempo real. Esta versión contiene todos los errores corregidos que se presentaron como tearea.
+**WeatherApp** es una aplicación React diseñada con inspiración en pixel art para consumir datos de una API de clima en tiempo real. Esta versión contiene todos los errores corregidos que se presentaron como tarea.
 
 ## Objetivo
 
